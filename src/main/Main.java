@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
 
-        Resume resume = new Resume("Кислин Григорий", new Objective("Архитектор/ Технический лидер/ Старший Scala/Java разработчик", "Интересен технологический стек Typesafe (Scala. Akka. Play.)"));
+        Resume resume = new Resume("Кислин Григорий", new Objective("Архитектор/ Технический лидер/ Старший Scala/Java разработчик", "Интересен технологический стек Typesafe (Scala. Akka. Play.)"), "http://gkislin.ru", "Россия, г. Санкт-Петербург", "+7 (921) 855 0482", "gkislin@yandex.ru", "grigory.kislin");
         resume.getAchievements().add(new Achievement("Разработка и проведение Java тренингов \"Разработка Web приложения\" и вебинаров \"Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ jQuery\" и \"Веб-сервисы. SOA-based архитектура\""));
         resume.getAchievements().add(new Achievement("Налаживание процесса разработки и непрерывной интеграции ERP системы River BPM. Интеграция с 1С, BPMN2, CMIS, LDAP. Разработка небольшого приложения Управления Окружением (вход: login/password) на стеке: Scala/Play 2.1/Anorm/JQuery. Разработка SSO аутентификации и авторизации различных ERP модулей, интеграция CIFS/SMB java сервера в инфраструктуру River BPM"));
         resume.getAchievements().add(new Achievement("Реализация c нуля многоуровневого фреймворка для RIA (Rich Internet Application) приложения на стеке технологий JPA, Spring, Spring-MVC, GWT, ExtGWT (GXT), Commet, HTML5 c аутентификацией и авторизацией пользователя для алгоритмического трейдинга. Интеграция online клиента с интеррактивным графическим javaScript фреймворком Highstock. Динамическое конфигурирование клиетской и серверной части приложения."));

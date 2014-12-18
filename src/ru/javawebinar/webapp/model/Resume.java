@@ -10,6 +10,11 @@ import java.util.List;
  */
 public class Resume {
     private String fio;
+    private String url;
+    private String address;
+    private String phone;
+    private String email;
+    private String skype;
     private Objective objective;
     private List<Achievement> achievements = new ArrayList<Achievement>();
     private List<Qualification> qualifications = new ArrayList<Qualification>();
@@ -18,6 +23,16 @@ public class Resume {
 
     public Resume(String fio, Objective objective) {
         this.fio = fio;
+        this.objective = objective;
+    }
+
+    public Resume(String fio, Objective objective, String url, String address, String phone, String email, String skype) {
+        this(fio, objective);
+        this.url = url;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.skype = skype;
         this.objective = objective;
     }
 
@@ -56,8 +71,13 @@ public class Resume {
     @Override
     public String toString() {
         return "Резюме \n " + fio +
-                "\n\tЦель: " + objective +
-                " \n\tДостижения: " + achievements +
+                "\n\tДомашняя страница: " + url +
+                "\n\tПроживание: " + address +
+                "\n\tТел: " + phone +
+                "\n\tEmail: " + email +
+                "\n\tSkype: " + skype +
+                "\n\n\tЦель: " + objective +
+                "\n \n\tДостижения: " + achievements +
                 " \n\tКвалификация: " + qualifications +
                 " \n\tОпыт работы: " + experiences +
                 " \n\tОбразование: " + educations;
