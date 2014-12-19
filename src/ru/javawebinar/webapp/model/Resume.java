@@ -1,8 +1,6 @@
 package ru.javawebinar.webapp.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * gkislin
@@ -20,6 +18,7 @@ public class Resume {
     private List<Qualification> qualifications = new ArrayList<Qualification>();
     private List<Experience> experiences = new ArrayList<Experience>();
     private List<Education> educations = new ArrayList<Education>();
+    private Map<SectionType, List<Row>> sections  = new HashMap<SectionType, List<Row>>();
 
     public Resume(String fio, Objective objective) {
         this.fio = fio;
@@ -42,6 +41,13 @@ public class Resume {
 
     public void setObjective(Objective objective) {
         this.objective = objective;
+    }
+
+    public void addSection(SectionType type, Row row)
+    {
+        if (!sections.containsKey(type))
+            sections.put(type, new ArrayList<Row>());
+        sections.get(type).add(row);
     }
 
     public List<Achievement> getAchievements() {
@@ -68,17 +74,21 @@ public class Resume {
         this.educations.add(education);
     }
 
+    public String getSection(SectionType type)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(Row row : sections.get(type))
+            sb.append(row.toString());
+        return sb.toString();
+    }
+
     @Override
     public String toString() {
         return "Резюме \n " + fio +
-                "\n\tДомашняя страница: " + url +
-                "\n\tПроживание: " + address +
-                "\n\tТел: " + phone +
-                "\n\tEmail: " + email +
-                "\n\tSkype: " + skype +
+                "\n\t" + getSection(SectionType.CONTACT) +
                 "\n\n\tЦель: " + objective +
-                "\n \n\tДостижения: " + achievements +
-                " \n\tКвалификация: " + qualifications +
+                "\n \n\tДостижения: " + getSection(SectionType.ACHIEVEMENT) +
+                "\n \n\tКвалификация: " + getSection(SectionType.QUALIFICATION) +
                 " \n\tОпыт работы: " + experiences +
                 " \n\tОбразование: " + educations;
     }

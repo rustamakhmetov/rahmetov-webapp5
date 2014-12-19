@@ -1,5 +1,7 @@
 package ru.javawebinar.webapp.model;
 
+import java.text.ParseException;
+
 /**
  * rahmetov
  * 18.12.2014.
@@ -7,8 +9,8 @@ package ru.javawebinar.webapp.model;
 public class WorkExtended extends Work {
     private Objective objective;
 
-    public WorkExtended(Objective objective, String periodOfWork, String description) {
-        super(periodOfWork, description);
+    public WorkExtended(Objective objective, String startDate, String endDate, String description) {
+        super(startDate, endDate, description);
         this.objective = objective;
     }
 
