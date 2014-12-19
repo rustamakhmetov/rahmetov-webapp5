@@ -18,7 +18,7 @@ public class Resume {
     private List<Qualification> qualifications = new ArrayList<Qualification>();
     private List<Experience> experiences = new ArrayList<Experience>();
     private List<Education> educations = new ArrayList<Education>();
-    private Map<SectionType, List<Row>> sections  = new HashMap<SectionType, List<Row>>();
+    private Map<SectionType, List<Section>> sections  = new HashMap<SectionType, List<Section>>();
 
     public Resume(String fio, Objective objective) {
         this.fio = fio;
@@ -43,11 +43,11 @@ public class Resume {
         this.objective = objective;
     }
 
-    public void addSection(SectionType type, Row row)
+    public void addSection(SectionType type, Section section)
     {
         if (!sections.containsKey(type))
-            sections.put(type, new ArrayList<Row>());
-        sections.get(type).add(row);
+            sections.put(type, new ArrayList<Section>());
+        sections.get(type).add(section);
     }
 
     public List<Achievement> getAchievements() {
@@ -77,8 +77,8 @@ public class Resume {
     public String getSection(SectionType type)
     {
         StringBuilder sb = new StringBuilder();
-        for(Row row : sections.get(type))
-            sb.append(row.toString());
+        for(Section section : sections.get(type))
+            sb.append(section.toString());
         return sb.toString();
     }
 

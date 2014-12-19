@@ -4,18 +4,18 @@ package ru.javawebinar.webapp.model;
  * rahmetov
  * 19.12.2014.
  */
-public class Row {
+public class Section {
     private String icon;
     private String description;
 
-    public Row() {
+    public Section() {
     }
 
-    public Row(String description) {
+    public Section(String description) {
         this.description = description;
     }
 
-    public Row(String icon, String description) {
+    public Section(String icon, String description) {
         this.icon = icon;
         this.description = description;
     }
