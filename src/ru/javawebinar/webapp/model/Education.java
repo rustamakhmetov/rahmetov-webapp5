@@ -7,7 +7,7 @@ import java.util.List;
  * rahmetov
  * 18.12.2014.
  */
-public class Education {
+public class Education extends Section {
     private String company;
     private List<Work> courses = new ArrayList<Work>();
 

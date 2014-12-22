@@ -35,24 +35,24 @@ public class Main {
         Experience experience = new Experience("RIT Center");
         experience.getWorks().add(new WorkExtended(new Objective("Java архитектор"), "04/2012", null, "Организация процесса разработки системы ERP для разных окружений: релизная политика, версионирование, ведение CI (Jenkins), миграция базы (кастомизация Flyway), конфигурирование системы (pgBoucer, Nginx), AAA via SSO.\n" +
                 "Архитектура БД и серверной части системы. Разработка интергационных сервисов: CMIS , BPMN2, 1C (WebServices), сервисов общего назначения (почта, экспорт в pdf, doc, html). Интеграция Alfresco JLAN для online редактирование из браузера документов MS Office. Maven + plugin development, Ant, Apache Commons, Spring security, Spring MVC, Tomcat, WSO2, xcmis, OpenCmis, Bonita, Python scripting, Unix shell remote scripting via ssh tunnels, PL/Python"));
-        resume.addExperince(experience);
+        resume.addSection(SectionType.EXPERIENCE, experience);
 
         experience = new Experience("LevelUp");
         Objective trainer = new Objective("Автор и ведущий вебинара");
         experience.getWorks().add(new WorkExtended(trainer, "08/2014", "09/2014", "Maven/ Spring/ Security/ JPA(Hibernate)/ Rest(Jackson)/ jQuery"));
         experience.getWorks().add(new WorkExtended(trainer, "01/2014", "08/2014", "Веб-сервисы. SOA-based архитектура"));
         experience.getWorks().add(new WorkExtended(trainer, "10/2013", "08/2014", "Java для программистов. Разработка Web приложения"));
-        resume.addExperince(experience);
+        resume.addSection(SectionType.EXPERIENCE, experience);
 
         Education education = new Education("Coursera");
         education.getCourses().add(new Work("01/2013", "12/2013", "Курс \"Functional Programming Principles in Scala\" by Martin Odersky\n" +
                 "Сертификат с отличием (100.0%). "));
-        resume.addEducation(education);
+        resume.addSection(SectionType.EDUCATION, education);
 
         education = new Education("Институт Точной Механики и Оптики (Технический университет)");
         education.getCourses().add(new Work("01/1993", "12/1996", "Аспирантура"));
         education.getCourses().add(new Work("01/1987", "12/1993", "Инженер"));
-        resume.addEducation(education);
+        resume.addSection(SectionType.EDUCATION, education);
 
         System.out.println(resume);
 

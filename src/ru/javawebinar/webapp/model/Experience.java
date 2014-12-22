@@ -8,7 +8,7 @@ import java.util.List;
  * 18.12.2014.
  * Опыт работы
  */
-public class Experience {
+public class Experience extends Section {
     private String company;
     private List<WorkExtended> works = new ArrayList<WorkExtended>();
 
